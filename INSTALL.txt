@@ -1,0 +1,81 @@
+ToPy-0.1.1 installation instructions (2012).
+
+PLEASE read through the following carefully.
+
+=========================
+=== ToPy requirements ===
+=========================
+The following is ALL for Win 32-bit, I haven't tested ToPy with the 64-bit
+equivalents. I tested against the versions in the round brackets.
+
+I would still suggest to run ToPy on a modern GNU/Linux distribution, as
+installing and compiling things are just that much easier.
+
+1) Python (v2.7.1) {>= v2.5 should also work}
+
+2) Third party software (make sure it's for Python 2.7):
+--------------------------------------------------------
+    a) NumPy (v1.6.1) [sourceforge.net/projects/numpy/files/NumPy/1.6.1/]
+       If on Windows and you want to use the binary PySparse given below
+       under (e), then go here: http://www.lfd.uci.edu/~gohlke/pythonlibs/
+       Download the numpy-MKL installer under NumPy.
+       
+    b) Matplotlib (v1.1.0) [matplotlib.sourceforge.net]
+
+    c) SymPy (v0.7.1) [http://code.google.com/p/sympy/]
+
+    d) PyVTK (latest) [cens.ioc.ee/projects/pyvtk, under Download]
+       It's been moved to Google Code, but it's still available from
+       the URL above. The actual version I tested against is v0.4.74.
+
+    e) PySparse (v1.1.1) [pysparse.sourceforge.net]
+       You have to build PySparse from source, which can be
+       a slight hassle on Windows...
+       Fortunately, there's a binary here (look under PySparse):
+       http://www.lfd.uci.edu/~gohlke/pythonlibs/
+    
+
+3) To view 3D results and to create animations:
+-----------------------------------------------
+    a) ParaView or MayaVi [www.paraview.org] or      
+       [mayavi.sourceforge.net]
+    b) ImageMagick (to convert PNG's to GIF's) 
+       [www.imagemagick.org]
+
+
+====================
+=== Installation ===
+====================
+Install at least all the requirements listed under point 2 above, in
+that order.
+
+Then unzip the ToPy zip file. You have two options for installation:
+
+Option 1:
+---------
+Then do the usual (in a terminal/console):
+
+python setup.py install
+
+Note: The examples are not copied to the installation folder, you can
+access them in the extracted archive folder.
+
+Option 2:
+---------
+Just copy the entire 'topy' folder to the 'site-packages' folder in
+your Python installation. You can also copy it to another location
+that is visible to Python.
+
+==================
+=== Using ToPy ===
+==================
+Go to the 'examples' directory and read the README.txt file.
+
+The first time you use ToPy it might be slow, because it has to
+create stiffness matrices, which involves symbolic integration.
+Once it's done though, the subsequent runs will be fast.
+You can also create the matrices manually by typing
+
+python recreate_all.py
+
+in a terminal/console in the 'data' directory.
